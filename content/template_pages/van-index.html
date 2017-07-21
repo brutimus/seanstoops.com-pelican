@@ -1,0 +1,106 @@
+{% extends "page.html" %}
+{% block title %} &ndash; Van Building{% endblock %}
+{% set summarise = True %}
+
+{% block content %}
+
+<article>
+    <header>
+        <h1>Van Building</h1>
+    </header>
+
+    <p>Over the past couple years, I've built two camper van conversions: one Mercedes Sprinter and one Ford Transit. Along the way, I've done a great deal of research and learned a lot. I decided to contribute that knowledge back to the van building community by creating this page.</p>
+    <p>Initially, this page was going to be a complete build log of my first van &mdash; a 2004 Mercedes Sprinter. I completed several posts, but slowed down as life got busy.</p>
+    <p>After about a year and a half of traveling and part time living in that van, I decided to sell it and build something a little more modern. Thus, in September of 2016, it sold and I immediately purchaced a 2015 Ford Transit.</p>
+    <p>The next two months were spent completing the second build and juggling my day job. As time has allowed, I've been thinking about a plan for this site.</p>
+    <p><b>Alas, the new plan!</b> I will try to finish documenting the first build with the photos and notes I took. However, I don't plan to do a complete build log of the second build. I figure, by now, the internet is full of build logs of all degrees.</p>
+    <p>Instead, I would like to write a little more specifically about the components I chose, why I chose them and how they've performed. I think this will be a valuable contribution to the community as I found component selection to be one of the more time consuming processes. I may also discuss various building techniques I found to work well. And finally, I would like to put together mini shopping lists for people to use for various parts of the build (eg. X sink, Y faucet, Z fittings).</p>
+    <p>I think, together, this would be a huge help to some people who find themselves a bit lots (as I did) when starting a build.</p>
+
+    <hr>
+    
+    <header>
+        <h1>2004 Sprinter Build Log</h1>
+    </header>
+    <div class="nav-grid">
+
+        {% for article in articles %}
+        {% for tag in article.tags %}
+        {% if tag.slug == 'build-log' %}
+        <a class="thumblink" href="/{{ article.url }}">
+            <img src="{{ article.thumb }}">
+            <h3>{{ article.shorttitle }}</h3>
+        </a>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+</article>
+
+<hr>
+
+{% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.index_top %}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
+       data-ad-slot="{{ GOOGLE_ADSENSE.ads.index_top }}"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+{% endif %}
+
+{% for category, articles in categories %}
+{% if category|trim == 'Van Building' %}
+{% for article in articles %}
+<article>
+  <header>
+    <h2><a href="{{ SITEURL }}/{{ article.url }}{% if not DISABLE_URL_HASH %}#{{ article.slug }}{% endif %}">{{ article.title }}</a></h2>
+    <p>
+      {{ _('Posted on %(when)s in %(category)s',
+           when=article.locale_date,
+           category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
+
+      {% if article.tags and not HOME_HIDE_TAGS %}
+          &#8226; {{ _('Tagged with') }}
+          {% for tag in article.tags %}
+              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+          {% endfor %}
+      {% endif %}
+
+      {% if 'post_stats' in PLUGINS %}
+        &#8226; {{ article.stats['read_mins'] }} min read
+      {% endif %}
+    </p>
+  </header>
+  <div>
+    {% if summarise or article.metadata['summary'] or SUMMARY_MAX_LENGTH %}
+      {% if  article.featured_image %}
+        <img src="{{ article.featured_image }}">
+      {% endif %}
+      {{ article.summary }}
+      <br>
+      <a class="btn" href="{{ SITEURL }}/{{ article.url }}{% if not DISABLE_URL_HASH %}#{{ article.slug }}{% endif %}">{{ _('Continue reading') }}</a>
+    {% else %}
+      {{ article.content }}
+    {% endif %}
+  </div>
+  {% if not loop.last %}
+  <hr />
+  {% endif %}
+</article>
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+{% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.index_bottom %}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
+       data-ad-slot="{{ GOOGLE_ADSENSE.ads.index_bottom }}"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+{% endif %}
+
+
+{% endblock %}
