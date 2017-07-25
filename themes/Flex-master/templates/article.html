@@ -40,6 +40,9 @@
   {% endif %}
 
   <div>
+    {% if article.category|trim == "Van Building" %}
+      {% include "partial/van-cta.html" %}
+    {% endif %}
     {{ article.content }}
   </div>
   <div class="tag-cloud">

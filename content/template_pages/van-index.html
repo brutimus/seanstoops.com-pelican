@@ -2,11 +2,58 @@
 {% block title %} &ndash; Van Building{% endblock %}
 {% set summarise = True %}
 
+
 {% block content %}
+
+{% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.index_top %}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
+       data-ad-slot="{{ GOOGLE_ADSENSE.ads.index_top }}"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+{% endif %}
 
 <article>
     <header>
-        <h1>Van Building</h1>
+        <h1>Camper van conversions</h1>
+    </header>
+
+    <p>When I converted my first van, I decided to start a site to document the process in hopes that I could contribute some knowledge back to the van building community that I relied so heavily upon.</p>
+    <p>Below, you will find my work-in-progress build log for my 2004 Mercedes Sprinter conversion. Soon, I will begin writing about my second conversion &mdash; a 2015 Ford Transit. I will also begin writing some more generic pieces on component selection, product reviews, etc.</p>
+    <p>Enjoy!</p>
+</article>
+
+<hr>
+
+<article>
+    <header>
+        <h2>2004 Mercedes Sprinter Conversion Log</h2>
+    </header>
+    <div class="nav-grid">
+
+        {% for article in articles %}
+        {% for tag in article.tags %}
+        {% if tag.slug == 'build-log' %}
+        <a class="thumblink" href="/{{ article.url }}">
+            <img src="{{ article.thumb }}">
+            <span>
+                <h3>{{ article.shorttitle }}</h3>
+            </span>
+        </a>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+</article>
+
+<hr>
+
+<article>
+    <header>
+        <h2>About this page (extended edition)</h2>
+
     </header>
 
     <p>Over the past couple years, I've built two camper van conversions: one Mercedes Sprinter and one Ford Transit. Along the way, I've done a great deal of research and learned a lot. I decided to contribute that knowledge back to the van building community by creating this page.</p>
@@ -17,24 +64,6 @@
     <p>Instead, I would like to write a little more specifically about the components I chose, why I chose them and how they've performed. I think this will be a valuable contribution to the community as I found component selection to be one of the more time consuming processes. I may also discuss various building techniques I found to work well. And finally, I would like to put together mini shopping lists for people to use for various parts of the build (eg. X sink, Y faucet, Z fittings).</p>
     <p>I think, together, this would be a huge help to some people who find themselves a bit lots (as I did) when starting a build.</p>
 
-    <hr>
-    
-    <header>
-        <h1>2004 Sprinter Build Log</h1>
-    </header>
-    <div class="nav-grid">
-
-        {% for article in articles %}
-        {% for tag in article.tags %}
-        {% if tag.slug == 'build-log' %}
-        <a class="thumblink" href="/{{ article.url }}">
-            <img src="{{ article.thumb }}">
-            <h3>{{ article.shorttitle }}</h3>
-        </a>
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
-    </div>
 </article>
 
 <hr>
@@ -48,6 +77,7 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 {% endif %}
+
 
 {% for category, articles in categories %}
 {% if category|trim == 'Van Building' %}

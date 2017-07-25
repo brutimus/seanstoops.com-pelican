@@ -18,6 +18,7 @@ STATIC_PATHS = ['images']
 
 CUSTOM_CSS = 'css/custom.css'
 
+INDEX_SAVE_AS = 'all_index.html'
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 PAGE_URL = 'pages/{slug}/'
@@ -37,11 +38,20 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Archives', '/archives.html'),)
+LINKS = (
+    ('Home', '/'),
+    ('Van Building', '/pages/van-building/'),
+    ('Photos', '/pages/photos'),
+    ('Archives', '/archives.html')
+)
 
 # Social widget
-SOCIAL = (('instagram', 'https://www.instagram.com/seanstoops/'),
-          ('facebook', 'https://www.facebook.com/seanstoopsadventurevan/'),)
+SOCIAL = (
+    ('instagram', 'https://www.instagram.com/seanstoops/'),
+    ('facebook', 'https://www.facebook.com/seanstoopsadventurevan/'),
+    ('github', 'https://github.com/brutimus'),
+    ('reddit', 'https://www.reddit.com/user/brutimus/')
+)
 
 DEFAULT_PAGINATION = 10
 
@@ -49,10 +59,37 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ('pelican_alias', 'assets')
+PLUGINS = ('pelican_alias', 'assets', 'related_posts', 'sitemap')
 
 DISQUS_SITENAME = "seanstoops"
 
 TEMPLATE_PAGES = {
     'template_pages/van-index.html': 'pages/van-building/index.html'
+}
+
+GOOGLE_ADSENSE = {
+    'ca_id': 'ca-pub-2088185738984134',
+    'page_level_ads': True,
+    'ads': {
+        'aside': '2232269495',
+        # 'main_menu': '6690389256',
+        'index_top': '7205572181',
+        'index_bottom': '7400835696',
+        'article_top': '9621828448',
+        'article_bottom': '5682583438'
+    }
+}
+
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
 }
