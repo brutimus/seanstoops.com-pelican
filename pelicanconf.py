@@ -5,12 +5,13 @@ from __future__ import unicode_literals
 AUTHOR = u'Sean Stoops'
 SITENAME = u'Sean Stoops'
 SITETITLE = u'Sean Stoops'
-SITESUBTITLE = u'Things I do'
+SITESUBTITLE = u'I make things.'
 SITEDESCRIPTION = u'A personal website for Sean Stoops to write about van building, rock climbing, programming, and miscellaneous adventures.'
 SITEURL = 'http://localhost:8000'
 THEME = 'themes/Flex-master'
 COPYRIGHT_NAME = 'Sean Stoops'
 COPYRIGHT_YEAR = '2017'
+ROBOTS = 'index, follow'
 USE_FOLDER_AS_CATEGORY = False
 
 PATH = 'content'
@@ -40,7 +41,7 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (
     ('Home', '/'),
-    ('Van Building', '/pages/van-building/'),
+    ('Van Building', '/pages/camper-van-conversions/'),
     ('Photos', '/pages/photos'),
     ('Archives', '/archives.html')
 )
@@ -64,7 +65,7 @@ PLUGINS = ('pelican_alias', 'assets', 'related_posts', 'sitemap')
 DISQUS_SITENAME = "seanstoops"
 
 TEMPLATE_PAGES = {
-    'template_pages/van-index.html': 'pages/van-building/index.html'
+    'template_pages/camper-van-conversions.html': 'pages/camper-van-conversions/index.html'
 }
 
 GOOGLE_ADSENSE = {

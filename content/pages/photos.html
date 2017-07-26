@@ -52,7 +52,7 @@
                 var keys = [],
                 gallery_keys = [],
                 galleries = [],
-                xmlSource = 'http://www.seanstoops.com.s3-us-west-2.amazonaws.com/?prefix=photos/';
+                xmlSource = 'http://photos.seanstoops.com.s3-us-west-2.amazonaws.com/?prefix=';
 
                 function fetchXML(url) {
                 $.get(url)
@@ -65,18 +65,19 @@
                         fetchXML(xmlSource + '&marker=' + keys[keys.length-1]);
                     } else {
                         gallery_keys = keys.filter(function(el){
-                        return el.split('/').length == 3}
+                            //console.log(el)
+                        return el.split('/').length == 2}
                         );
 
                         $.each(gallery_keys, function(i, el){
-                        console.log(el);
-                        var path = el.split('/').slice(0, 2);
+                        //console.log(el);
+                        var path = el.split('/')[0];
                         galleries.push({
-                            'url': '/' + path.join('/') + '/',
-                            'title': path[1].split('-').slice(1).join(' '),
-                            'date': parseInt(path[1].split('-')[0]),
+                            'url': '/' + path + '/',
+                            'title': path.split('-').slice(1).join(' '),
+                            'date': parseInt(path.split('-')[0]),
                             'thumbs': keys.filter(function(k){
-                            return k.indexOf(path.join('/')) >= 0 && k.indexOf('thumbnails') >= 0
+                            return k.indexOf(path) >= 0 && k.indexOf('thumbnails') >= 0
                             })
                         })
                         });
@@ -103,7 +104,7 @@
                         .attr('href', gal_el.url)
                         .text(gal_el.title).append(
                             $('<div class="thumbs">').append(gal_el.thumbs.slice(0,4).map(function(thumb_el){
-                            return $('<img>').attr('src', 'http://www.seanstoops.com/' + thumb_el)
+                            return $('<img>').attr('src', 'http://photos.seanstoops.com.s3-us-west-2.amazonaws.com/' + thumb_el)
                             }))
                         )
                     );
