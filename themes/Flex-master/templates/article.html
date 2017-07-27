@@ -40,6 +40,9 @@
   {% endif %}
 
   <div>
+    {#{% if article.photo_image %}
+    <img src="{{ SITEURL }}/{{ article.photo_image[1] }}" />
+    {% endif %}#}
     {% if article.category|trim == "Van Building" %}
       {% include "partial/van-cta.html" %}
     {% endif %}

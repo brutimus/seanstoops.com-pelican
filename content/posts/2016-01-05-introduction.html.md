@@ -6,16 +6,15 @@ Category: Van Building
 Tags: sprinter, build, build-log
 Authors: Sean Stoops
 Summary: Over the years, I’ve spent quite a bit of time traveling, camping and living off and on in the back of my 2001 Ford Escape. This has been my dream vehicle for over a decade now: it's four wheel drive, seats four, sleeps two with room to spare and it's beefy enough to tow a trailer. I've traveled in it for months at a time. With two people traveling long term, it's tight and you can't take much gear, but it's doable without much fuss.
-Cover: /images/cover-sprinter.jpg
-Thumb: /images/thumbs/intro.jpg
+image: {photo}2016-01-05-introduction/IMG_2627.jpg
 
 Over the last few years, I’ve spent quite a bit of time traveling, camping and living off and on in the back of my 2001 Ford Escape. This has been my dream vehicle for over a decade now: it's four wheel drive, seats four, sleeps two with room to spare and it's beefy enough to tow a trailer. I've traveled in it for months at a time. With two people traveling long term, it's tight and you can't take much gear, but it's doable without much fuss.
 
-![Escape Photo 1]({filename}/images/escape_1.jpg)
+![Escape Photo 1]({photo}2016-01-05-introduction/escape_1.jpg)
 
-![Escape Photo 2]({filename}/images/escape_2.jpg)
+![Escape Photo 2]({photo}2016-01-05-introduction/escape_2.jpg)
 
-![Escape Photo 3]({filename}/images/escape_3.jpg)
+![Escape Photo 3]({photo}2016-01-05-introduction/escape_3.jpg)
 
 In early 2015, I began thinking about upgrading to something bigger in order to be a little more comfortable on those rainy days and to enable me to take a little more adventure gear with me on those longer trips.
 

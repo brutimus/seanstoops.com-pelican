@@ -37,7 +37,7 @@
         {% for tag in article.tags %}
         {% if tag.slug == 'build-log' %}
         <a class="thumblink" href="/{{ article.url }}">
-            <img src="{{ article.thumb }}">
+            <img src="{{ SITEURL }}/{{ article.photo_image[2] }}">
             <span>
                 <h3>{{ article.shorttitle }}</h3>
             </span>

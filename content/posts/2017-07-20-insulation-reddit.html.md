@@ -6,9 +6,7 @@ Category: Van Building
 Tags: sprinter, transit, build, reddit
 Authors: Sean Stoops
 Summary: This is a contribution I made to a reddit.com discussion about insulating a camper van
-Cover: /images/cover-insulation.jpg
-Thumb: 
-
+image: {photo}2016-01-28-insulation/IMG_20150324_131536.jpg
 
 *This post is a contribution I made to a reddit.com discussion. Since I spend a fair amount of time discussing the various aspects of van-building on reddit.com, I've decided to copy those discussions here for posterity. Please note, however, through these discussions I tend to learn new ideas and change my own perspectives. The snippets I've memorialized here are merely a snapshot in time.*
 

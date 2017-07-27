@@ -6,8 +6,7 @@ Category: Van Building
 Tags: sprinter, build, build-log
 Authors: Sean Stoops
 Summary: At the beginning of my search for a van, the average price tag on the Craigslist listing I saw left me pretty disenchanted with the idea. I expected the prices to be higher than your average Astro van, but seeing old, rusted out, 300k mileage vans still listed for $20,000 was a shock. Luckily, these price tags only reflects the sellers hopes and dreams, not necessarily reality.
-Cover: /images/cover-purchase.jpg
-Thumb: /images/thumbs/purchase.jpg
+image: {photo}2016-01-24-sprinter-purchase/spreadsheet.jpg
 
 *This post is not intended to be any form of financial advice. Your van purchase is your decision. I will simply outline my own experience which turned out pretty well. Good luck! =)*
 
@@ -72,26 +71,26 @@ See you on the road!
 
 These are the photos the previous owner supplied. My purchase decision was made from these photos and several phone conversations with the owner.
 
-![Purchase Photo 1]({filename}/images/purchase/purchase_photo_1.jpg)
-![Purchase Photo 2]({filename}/images/purchase/purchase_photo_2.jpg)
-![Purchase Photo 3]({filename}/images/purchase/purchase_photo_3.jpg)
-![Purchase Photo 4]({filename}/images/purchase/purchase_photo_4.jpg)
+![Purchase Photo 1]({photo}2016-01-24-sprinter-purchase/purchase_photo_1.jpg)
+![Purchase Photo 2]({photo}2016-01-24-sprinter-purchase/purchase_photo_2.jpg)
+![Purchase Photo 3]({photo}2016-01-24-sprinter-purchase/purchase_photo_3.jpg)
+![Purchase Photo 4]({photo}2016-01-24-sprinter-purchase/purchase_photo_4.jpg)
 If you're paying attention, you'll notice in the introductory post, I said the van was a Dodge. The PO had re-branded it back to its Mercedes roots with a new grill, new emblems on the hub caps and a new steering wheel badge.
 
-![Purchase Photo 5]({filename}/images/purchase/purchase_photo_5.jpg)
-![Purchase Photo 6]({filename}/images/purchase/purchase_photo_6.jpg)
+![Purchase Photo 5]({photo}2016-01-24-sprinter-purchase/purchase_photo_5.jpg)
+![Purchase Photo 6]({photo}2016-01-24-sprinter-purchase/purchase_photo_6.jpg)
 For a van with 242,000 miles on the clock, this cab is immaculate!
 
-![Purchase Photo 7]({filename}/images/purchase/purchase_photo_7.jpg)
-![Purchase Photo 8]({filename}/images/purchase/purchase_photo_8.jpg)
-![Purchase Photo 9]({filename}/images/purchase/purchase_photo_9.jpg)
-![Purchase Photo 10]({filename}/images/purchase/purchase_photo_10.jpg)
-![Purchase Photo 11]({filename}/images/purchase/purchase_photo_11.jpg)
-![Purchase Photo 12]({filename}/images/purchase/purchase_photo_12.jpg)
+![Purchase Photo 7]({photo}2016-01-24-sprinter-purchase/purchase_photo_7.jpg)
+![Purchase Photo 8]({photo}2016-01-24-sprinter-purchase/purchase_photo_8.jpg)
+![Purchase Photo 9]({photo}2016-01-24-sprinter-purchase/purchase_photo_9.jpg)
+![Purchase Photo 10]({photo}2016-01-24-sprinter-purchase/purchase_photo_10.jpg)
+![Purchase Photo 11]({photo}2016-01-24-sprinter-purchase/purchase_photo_11.jpg)
+![Purchase Photo 12]({photo}2016-01-24-sprinter-purchase/purchase_photo_12.jpg)
 I was expecting worse than this given the New England roads.
 
-![Purchase Photo 13]({filename}/images/purchase/purchase_photo_13.jpg)
+![Purchase Photo 13]({photo}2016-01-24-sprinter-purchase/purchase_photo_13.jpg)
 No injector blow-by (black death)!
 
-![Purchase Photo 14]({filename}/images/purchase/purchase_photo_14.jpg)
+![Purchase Photo 14]({photo}2016-01-24-sprinter-purchase/purchase_photo_14.jpg)
 I guess the van had an alignment issue that got fixed before I purchased it. But you can see the damage it did to the front tire.

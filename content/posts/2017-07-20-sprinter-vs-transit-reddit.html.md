@@ -6,8 +6,7 @@ Category: Van Building
 Tags: sprinter, transit, build, reddit
 Authors: Sean Stoops
 Summary: This is a contribution I made to a reddit.com discussion about the Mercedes Sprinter vs the Ford Transit
-Cover: /images/sprinter-vs-transit.jpg
-Thumb: 
+image: {photo}sprinter-vs-transit.jpg
 
 *This post is a contribution I made to a reddit.com discussion. Since I spend a fair amount of time discussing the various aspects of van-building on reddit.com, I've decided to copy those discussions here for posterity. Please note, however, through these discussions I tend to learn new ideas and change my own perspectives. The snippets I've memorialized here are merely a snapshot in time.*
 

@@ -6,8 +6,7 @@ Category: Van Building
 Tags: sprinter, build, build-log
 Authors: Sean Stoops
 Summary: The most difficult part of insulating was deciding on the materials to use. Once that was done, it was a matter of measure, cut, glue, repeat.
-Cover: /images/cover-insulation.jpg
-Thumb: /images/thumbs/insulation.jpg
+image: {photo}2016-01-28-insulation/IMG_20150324_131536.jpg
 
 
 #### Materials List
@@ -52,7 +51,7 @@ Before starting, I made sure all my surfaces were clean and clear of any dirt. I
 
 I started by giving the entire ceiling panel a healthy coat of the spray adhesive and letting it set a few minutes until it becomes tacky. I grabbed an end of the [reflectix][http://amzn.to/1WQc5Ea], lined it up to one edge and rolled it out to cover the entire length of that section of ceiling and cut it off flush with a [utility knife](http://amzn.to/1nqVYjS). Move over to the next panel and repeat.
 
-![Reflectix]({filename}/images/build/build_9_.jpg)
+![Reflectix]({photo}2016-01-28-insulation/build_9_.jpg)
 <small>While this photo shows the layers on the floor, they are identical to the ceiling. You'll notice first the layer of reflectix, then a layer of the polyiso board.</small>
 
 This was an easy one-man job as the adhesive does a great job of sticking the insulation immediately as long as you give it that minute or two to become tacky. The only slightly difficult parts were the section that I had to cut around the roof vent and the front and rear-most sections as they were a little odd sized. Any gaps that I had, I just cut strips of reflectix and glued them in to cover.
@@ -65,11 +64,11 @@ I kept applying this stuff until I'd covered every open inch of ceiling, wall an
 
 Next up, attaching the [polyiso board](http://www.homedepot.com/p/Thermasheath-Rmax-Thermasheath-3-1-in-x-4-ft-x-8-ft-R-6-Polyisocyanurate-Rigid-Foam-Insulation-Board-787264/100549260) to the ceiling, another relative simple job. This is essentially a repeat of how the reflectix was attached, but instead using sheets of 1" thick polyiso board. For this, I actually had to measure each ceiling section, hope out and cut the board to size. I made sure to spray the adhesive well in advance as it needed ample time to become tacky to hold the polyiso board in place.
 
-![Ceiling 1]({filename}/images/build/build_8_.jpg)
+![Ceiling 1]({photo}2016-01-28-insulation/build_8_.jpg)
 
 I tried to cover all the big flat surfaces first, then filled in any curved sections later with the scraps I had left over. If you live somewhere dry like I do, these little foam particles will be static-clung to *everything*. I recommend finishing the day with a sweep through with an air compressor, leaf blower, etc.
 
-![Ceiling 2]({filename}/images/build/build_10_.jpg)
+![Ceiling 2]({photo}2016-01-28-insulation/build_10_.jpg)
 
 You'll notice in the photos that I also used some of this stuff on sections of the wall. This was only because I ran out of the denim batting and had some polyiso board left over, so I doubled it up and glued it into the wall.
 
@@ -81,14 +80,14 @@ This stuff is also so easy to work with. I used the same [spray adhesive](http:/
 
 Again, flush the van out with your wind generator of choice and go take a shower.
 
-![Wall 1]({filename}/images/build/build_7_.jpg)
+![Wall 1]({photo}2016-01-28-insulation/build_7_.jpg)
 
 ##### Vapor barrier
 
 The hardest part of this whole process was probably the vapor barrier. I used simple [plastic sheeting](http://amzn.to/1PDAS8H) (also called painters tarp, drop cloth) and used [foil tape](http://amzn.to/1JJnX94) to stick it to the walls. I simply cut big chunks of the sheeting to match the shape of the wall, taped it at the top and worked my way down, flattening and trimming as I went.
 
-![Vapor 1]({filename}/images/build/build_11_.jpg)
-![Vapor 2]({filename}/images/build/build_12_.jpg)
+![Vapor 1]({photo}2016-01-28-insulation/build_11_.jpg)
+![Vapor 2]({photo}2016-01-28-insulation/build_12_.jpg)
 
 I realize my vapor barrier isn't perfect, but my goal was to at least prevent the majority of the moisture. Again, I live and spend most of my time in desert environments, so this isn't my highest concern. If you live in a wet climate, I recommend spending a little more time here.
 

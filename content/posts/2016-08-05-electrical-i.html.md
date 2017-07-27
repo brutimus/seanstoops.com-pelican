@@ -6,8 +6,7 @@ Category: Van Building
 Tags: sprinter, build, build-log
 Authors: Sean Stoops
 Summary: The electrical side of a van build is something that should be tailored your power requirements. Some people require little more than a few LED lights and obviously don't spend much time worrying about batteries, solar panels and the like. Others want a mega-system that allows them to plug in laptops, kettles, induction stoves, etc.
-Cover: /images/cover-electrical-i.jpg
-Thumb: /images/thumbs/electrical-i.jpg
+image: {photo}2016-08-05-electrical-i/electrical.jpg
 
 
 *Apologies in advance for the total lack of photos for this post. I did my electrical work toward the end of my build when time was running low and I never took a moment to snap a photo. In my upcoming post about the second phase in my electrical work (including solar, fridge, etc.) I will have more photos, I promise!*
@@ -95,7 +94,7 @@ When wiring up each consumer, the wire gauge must be selected depending on the c
 
 But as a quick example, let's take my vent fan. On high, it will draw no more than 4 amps. Using a long piece of string, I trace the path the wire will have to take from the fan along the ceiling and down the column beside the passenger seat down to the fuse block. Let's say this is 20 feet. Looking at the following chart, we see that I'm okay to use 16 gauge wire to make this run accepting a non-critical 10% voltage loss.
 
-![Wire chart]({filename}/images/wire_chart.jpg)
+![Wire chart]({photo}2016-08-05-electrical-i/wire_chart.jpg)
 
 *A note on critical vs non-critical: critical means something like a computer or device that requires exact voltage. Non-critical is referring to simple devices like fans, lights, etc. If you want to prevent any power losses, just use the critical column and oversize your wiring. For a small build like this, this option won't cost you much extra. This becomes a big deal in large projects where there may be miles of wire and a difference of 1 gauge can mean hundreds or thousands of dollars.*
 
@@ -111,4 +110,4 @@ I'll be back with a new post about that soon!
 
 ##### WirthCo Wiring Schematic
 
-![Schematic]({filename}/images/wirthco_schematic.jpg)
+![Schematic]({photo}2016-08-05-electrical-i/wirthco_schematic.jpg)

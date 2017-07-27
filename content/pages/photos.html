@@ -101,10 +101,10 @@
                     $(galleries).map(function(index, gal_el){
                     return $('<div class="gallery">').append(
                         $('<a>')
-                        .attr('href', gal_el.url)
+                        .attr('href', 'http://photos.seanstoops.com' + gal_el.url)
                         .text(gal_el.title).append(
                             $('<div class="thumbs">').append(gal_el.thumbs.slice(0,4).map(function(thumb_el){
-                            return $('<img>').attr('src', 'http://photos.seanstoops.com.s3-us-west-2.amazonaws.com/' + thumb_el)
+                            return $('<img>').attr('src', 'http://photos.seanstoops.com/' + thumb_el)
                             }))
                         )
                     );

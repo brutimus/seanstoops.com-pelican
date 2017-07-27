@@ -15,7 +15,7 @@ ROBOTS = 'index, follow'
 USE_FOLDER_AS_CATEGORY = False
 
 PATH = 'content'
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['assets']
 
 CUSTOM_CSS = 'css/custom.css'
 
@@ -59,8 +59,14 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ('pelican_alias', 'assets', 'related_posts', 'sitemap')
+PLUGIN_PATHS = ['pelican-plugins', 'custom-plugins']
+PLUGINS = (
+    'assets',
+    'pelican_alias',
+    'photos',
+    'related_posts',
+    'sitemap'
+)
 
 DISQUS_SITENAME = "seanstoops"
 
@@ -72,9 +78,9 @@ GOOGLE_ADSENSE = {
     'ca_id': 'ca-pub-2088185738984134',
     'page_level_ads': True,
     'ads': {
-        'aside': '2232269495',
+        # 'aside': '2232269495',
         # 'main_menu': '6690389256',
-        'index_top': '7205572181',
+        # 'index_top': '7205572181',
         'index_bottom': '7400835696',
         'article_top': '9621828448',
         'article_bottom': '5682583438'
@@ -94,3 +100,13 @@ SITEMAP = {
         'pages': 'monthly'
     }
 }
+
+PHOTO_LIBRARY = "content/images"
+PHOTO_RESIZE_JOBS = 5
+PHOTO_WATERMARK = True
+# PHOTO_WATERMARK_TEXT = "© Sean Stoops"
+PHOTO_WATERMARK_TEXT = False
+# PHOTO_WATERMARK_IMG = "content/assets/watermark.png"
+PHOTO_GALLERY = (1024, 768, 80)
+PHOTO_ARTICLE = (1600, 1100, 40)
+PHOTO_THUMB = (500, 333, 40)
