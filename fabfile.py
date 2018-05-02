@@ -90,3 +90,16 @@ def gh_pages():
     """Publish to GitHub Pages"""
     rebuild()
     local("ghp-import -b {github_pages_branch} {deploy_path} -p".format(**env))
+
+
+def exif():
+    """Create gallery metadata files."""
+    local_path = os.getcwd() + '/exif'
+    dirs = os.walk('content/images')
+    dirs.next()  # Skip the parent dir
+    for subdir, dirs, files in dirs:
+        with lcd(subdir):
+            local("exiftool -p {fmt_path}/exif.fmt . > exif.txt".format(
+                fmt_path=local_path))
+            local("exiftool -p {fmt_path}/captions.fmt . > captions.txt".format(
+                fmt_path=local_path))

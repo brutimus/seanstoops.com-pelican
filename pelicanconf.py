@@ -3,14 +3,14 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Sean Stoops'
-SITENAME = u'Sean Stoops'
+SITENAME = u'SeanStoops.com'
 SITETITLE = u'Sean Stoops'
-SITESUBTITLE = u'I make things.'
+# SITESUBTITLE = u'I make things.'
 SITEDESCRIPTION = u'A personal website for Sean Stoops to write about van building, rock climbing, programming, and miscellaneous adventures.'
 SITEURL = 'http://localhost:8000'
-THEME = 'themes/Flex-master'
+THEME = 'themes/Flex'
 COPYRIGHT_NAME = 'Sean Stoops'
-COPYRIGHT_YEAR = '2017'
+COPYRIGHT_YEAR = '2018'
 ROBOTS = 'index, follow'
 USE_FOLDER_AS_CATEGORY = False
 
@@ -28,12 +28,15 @@ PAGE_SAVE_AS = 'pages/{slug}/index.html'
 TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = u'en'
+DEFAULT_DATE_FORMAT = '%A, %b. %d, %Y'
 
 MAIN_MENU = False
 
+DISABLE_URL_HASH = True
+
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -42,8 +45,9 @@ AUTHOR_FEED_RSS = None
 LINKS = (
     ('Home', '/'),
     ('Van Building', '/pages/camper-van-conversions/'),
-    ('Photos', '/pages/photos'),
-    ('Archives', '/archives.html')
+    ('Photos', '/pages/photo-galleries/'),
+    ('Archives', '/archives.html'),
+    ('Search', '/search/')
 )
 
 # Social widget
@@ -54,6 +58,8 @@ SOCIAL = (
     ('reddit', 'https://www.reddit.com/user/brutimus/')
 )
 
+MENUITEMS = LINKS[1:]
+
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -62,6 +68,7 @@ DEFAULT_PAGINATION = 10
 PLUGIN_PATHS = ['pelican-plugins', 'custom-plugins']
 PLUGINS = (
     'assets',
+    'collate_content',
     'pelican_alias',
     'photos',
     'related_posts',
@@ -71,20 +78,9 @@ PLUGINS = (
 DISQUS_SITENAME = "seanstoops"
 
 TEMPLATE_PAGES = {
-    'template_pages/camper-van-conversions.html': 'pages/camper-van-conversions/index.html'
-}
-
-GOOGLE_ADSENSE = {
-    'ca_id': 'ca-pub-2088185738984134',
-    'page_level_ads': True,
-    'ads': {
-        # 'aside': '2232269495',
-        # 'main_menu': '6690389256',
-        # 'index_top': '7205572181',
-        'index_bottom': '7400835696',
-        'article_top': '9621828448',
-        'article_bottom': '5682583438'
-    }
+    'template_pages/camper-van-conversions.html': 'pages/camper-van-conversions/index.html',
+    'template_pages/photo-galleries.html': 'pages/photo-galleries/index.html',
+    'template_pages/search.html': 'search/index.html'
 }
 
 SITEMAP = {
@@ -102,11 +98,18 @@ SITEMAP = {
 }
 
 PHOTO_LIBRARY = "content/images"
-PHOTO_RESIZE_JOBS = 5
+PHOTO_RESIZE_JOBS = 8
 PHOTO_WATERMARK = True
 # PHOTO_WATERMARK_TEXT = "© Sean Stoops"
 PHOTO_WATERMARK_TEXT = False
 # PHOTO_WATERMARK_IMG = "content/assets/watermark.png"
-PHOTO_GALLERY = (1024, 768, 80)
-PHOTO_ARTICLE = (1600, 1100, 40)
-PHOTO_THUMB = (500, 333, 40)
+PHOTO_GALLERY = (2500, 1700, 80)
+PHOTO_ARTICLE = (1600, 1100, 60)
+PHOTO_THUMB = (500, 333, 60)
+PHOTO_EXIF_KEEP = True
+PHOTO_EXIF_COPYRIGHT = 'COPYRIGHT'
+PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Sean Stoops'
+CUSTOM_CATEGORY_URLS = {
+    'van-building': 'pages/camper-van-conversions/',
+    'photo-gallery': 'pages/photos/'
+}

@@ -1,19 +1,9 @@
 {% extends "page.html" %}
-{% block title %} &ndash; Van Building{% endblock %}
+{% block title %}Camper Van Conversions | {% endblock %}
 {% set summarise = True %}
 
 
 {% block content %}
-
-{% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.index_top %}
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <ins class="adsbygoogle ads-responsive"
-       data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
-       data-ad-slot="{{ GOOGLE_ADSENSE.ads.index_top }}"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-{% endif %}
 
 <article>
     <header>
@@ -26,6 +16,17 @@
 </article>
 
 <hr>
+
+{% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.index_top %}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
+       data-ad-slot="{{ GOOGLE_ADSENSE.ads.index_top }}"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <hr>
+{% endif %}
 
 <article>
     <header>
@@ -79,11 +80,7 @@
 <hr>
 {% endif %}
 
-
-
-{% for category, articles in categories %}
-{% if category|trim == 'Van Building' %}
-{% for article in articles %}
+{% for article in collations.van_building_articles %}
 <article>
   <header>
     <h2><a href="{{ SITEURL }}/{{ article.url }}{% if not DISABLE_URL_HASH %}#{{ article.slug }}{% endif %}">{{ article.title }}</a></h2>
@@ -120,8 +117,6 @@
   <hr />
   {% endif %}
 </article>
-{% endfor %}
-{% endif %}
 {% endfor %}
 
 {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.index_bottom %}

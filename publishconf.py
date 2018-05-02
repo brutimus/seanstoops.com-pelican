@@ -13,11 +13,20 @@ from pelicanconf import *
 SITEURL = 'http://www.seanstoops.com'
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
 GOOGLE_ANALYTICS = "UA-72134577-1"
+GOOGLE_ADSENSE = {
+    'ca_id': 'ca-pub-2088185738984134',
+    'page_level_ads': True,
+    'ads': {
+        # 'aside': '2232269495',
+        # 'main_menu': '6690389256',
+        'index_top': '7205572181',
+        'index_bottom': '7400835696',
+        'article_top': '9621828448',
+        'article_bottom': '5682583438'
+    }
+}

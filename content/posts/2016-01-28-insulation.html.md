@@ -1,4 +1,4 @@
-Title: Insulating my Sprinter camper conversion
+Title: Insulating a Sprinter camper van conversion
 Shorttitle: Insulation
 Slug: insulation
 Date: 2016-1-28

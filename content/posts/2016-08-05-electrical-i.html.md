@@ -1,4 +1,4 @@
-Title: Installing a battery charged by the alternator in my Sprinter camper conversion
+Title: Installing a battery charged by the alternator in a Sprinter camper van conversion
 Shorttitle: Electrical
 Slug: electrical
 Date: 2016-8-5

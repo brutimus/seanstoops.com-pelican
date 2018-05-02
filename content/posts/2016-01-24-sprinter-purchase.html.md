@@ -1,10 +1,11 @@
-Title: Purchasing a Sprinter van for my first camper conversion
+Title: Purchasing a Sprinter van for a camper van conversion
 Shorttitle: Purchase
-Slug: purchase
+Slug: sprinter-purchase
 Date: 2016-1-24
 Category: Van Building
 Tags: sprinter, build, build-log
 Authors: Sean Stoops
+Alias: /2016/01/24/purchase/
 Summary: At the beginning of my search for a van, the average price tag on the Craigslist listing I saw left me pretty disenchanted with the idea. I expected the prices to be higher than your average Astro van, but seeing old, rusted out, 300k mileage vans still listed for $20,000 was a shock. Luckily, these price tags only reflects the sellers hopes and dreams, not necessarily reality.
 image: {photo}2016-01-24-sprinter-purchase/spreadsheet.jpg
 

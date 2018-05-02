@@ -1,4 +1,4 @@
-Title: Reddit discussion: Foam mattress optionsSprinter camper conversion
+Title: Reddit discussion: Foam mattress options for my Sprinter camper conversion
 Shorttitle: Reddit: Mattress
 Slug: reddit-mattress
 Date: 2017-7-20
