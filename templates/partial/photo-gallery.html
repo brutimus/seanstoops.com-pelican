@@ -1,0 +1,23 @@
+{% for title, gallery in article.photo_gallery %}
+    <div class="gallery-wrapper">
+        <div class=" flexbin">
+            {% for name, photo, thumb, exif, caption in gallery %}
+                <!-- <div class="photo"> -->
+                    <a
+                        href="{{ SITEURL }}/{{ photo }}"
+                        class="glightbox"
+                        data-glightbox="descPosition: right;">
+                        <img src="{{ SITEURL }}/{{ thumb }}">
+                        {% if caption %}
+                        <div class="glightbox-desc">
+                            {{ caption }}
+                            <hr>
+                            <small>{{ exif }}</small>
+                        </div>
+                        {% endif %}
+                    </a>
+                <!-- </div> -->
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

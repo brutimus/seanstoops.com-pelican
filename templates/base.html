@@ -1,0 +1,256 @@
+{% if 'jinja2.ext.i18n' not in JINJA_ENVIRONMENT.extensions and 'jinja2.ext.i18n' not in JINJA_EXTENSIONS %}
+  {% macro _(msg) %}
+    {{ msg % kwargs }}
+  {% endmacro %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  
+
+  {#<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pygments/{{ PYGMENTS_STYLE|default('github') }}.min.css">#}
+
+  {% assets
+    filters="less,cssmin",
+    output="stylesheet/style.min.css",
+    "stylesheet/style.less",
+    "stylesheet/custom.less",
+    "stylesheet/glightbox.css",
+    "stylesheet/flexbin.css" %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+{% endassets %}
+
+  {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom">
+  {% endif %}
+
+  {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS">
+  {% endif %}
+
+  {% if FAVICON %}
+    <link rel="shortcut icon" href="{{ FAVICON }}" type="image/x-icon">
+    <link rel="icon" href="{{ FAVICON }}" type="image/x-icon">
+  {% endif %}
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="p:domain_verify" content="c265e6cb05857500db9ffe556462eeac"/>
+  <meta name="google-site-verification" content="PJcUW8B513aWhZQYz-RoIfGvTA-Kt8-Y8RvLKQruwQg" />
+
+  {% if page in hidden_pages %}
+    <meta name="robots" content="noindex, nofollow" />
+  {% else %}
+    <meta name="robots" content="{{ ROBOTS }}" />
+  {% endif %}
+
+  {% if BROWSER_COLOR %}
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="{{ BROWSER_COLOR }}">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="{{ BROWSER_COLOR }}">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="{{ BROWSER_COLOR }}">
+  {% endif %}
+
+  {% block meta %}
+    <meta name="author" content="{{ AUTHOR }}" />
+    <meta name="description" content="{{ SITEDESCRIPTION }}" />
+    {% include "partial/og.html" %}
+  {% endblock %}
+
+  <title>{% block title %}{% endblock %}{{ SITENAME }}</title>
+
+  {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.page_level_ads and article and not article.no_ads %}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "{{ GOOGLE_ADSENSE.ca_id }}",
+      enable_page_level_ads: true
+    });
+  </script>
+  {% endif %}
+</head>
+<body>
+  {% if GOOGLE_TAG_MANAGER %}
+    {% include "partial/gtm.html" %}
+  {% endif %}
+  <aside>
+    <a href="{{ SITEURL }}">
+      {% if SITELOGO %}
+      <img src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
+      {% else %}
+      <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.jpg" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
+      {% endif %}
+    </a>
+    <div>
+      <h1><a href="{{ SITEURL }}">{{ SITETITLE }}</a></h1>
+
+      <hr>
+
+      {% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
+
+      {% if pages or LINKS %}
+      <nav>
+        <ul class="list">
+          {% if not PAGES_SORT_ATTRIBUTE -%}
+              {% set PAGES_SORT_ATTRIBUTE = 'title' %}
+          {%- endif %}
+          {% for page in pages|sort(attribute=PAGES_SORT_ATTRIBUTE) %}
+          <li><a href="{{ SITEURL }}/{{ page.url }}{% if not DISABLE_URL_HASH %}#{{ page.slug }}{% endif %}">{{ page.title }}</a></li>
+          {% endfor %}
+
+          {% for name, link in LINKS %}
+          <li><a href="{{ link }}">{{ name }}</a></li>
+          {% endfor %}
+
+        </ul>
+      </nav>
+      {% endif %}
+    </div>
+
+    <!-- Begin MailChimp Signup Form -->
+    <div id="mc_embed_signup">
+    <form action="//seanstoops.us16.list-manage.com/subscribe/post?u=296547190e675743fd8a91483&amp;id=6210041436" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+      <label for="mce-EMAIL">Subscribe for updates:</label>
+      <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email" required>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_296547190e675743fd8a91483_6210041436" tabindex="-1" value=""></div>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+        </div>
+    </form>
+    </div>
+    <!--End mc_embed_signup-->
+
+  </div>
+
+  <div>
+    <ul class="social">
+      {% for name, link in SOCIAL %}
+      <li><a class="sc-{{ name }}" href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
+      {% endfor %}
+      {% if FEED_ALL_RSS %}
+      <li><a class="sc-rss" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" target="_blank"><i class="fa fa-rss"></i></a></li>
+      {% endif %}
+      {% if FEED_ALL_ATOM %}
+      <li><a class="sc-rss" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" target="_blank"><i class="fa fa-rss"></i></a></li>
+      {% endif %}
+    </ul>
+
+  </div>
+
+    {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.aside and article and not article.no_ads %}
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle ads-aside"
+           data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
+           data-ad-slot="{{ GOOGLE_ADSENSE.ads.aside }}"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    {% endif %}
+
+  </aside>
+  <main>
+    {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.main_menu and article and not article.no_ads %}
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle ads-responsive"
+           data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
+           data-ad-slot="{{ GOOGLE_ADSENSE.ads.main_menu }}"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    {% endif %}
+
+    {% if MAIN_MENU %}
+    <nav>
+      <div>
+        <a href="{{ SITEURL }}">{{ _('Home') }}</a>
+
+        {% if article and article.category %}
+        <a href="{{ SITEURL }}/{% if article.category in CUSTOM_CATEGORY_URLS %}{{ CUSTOM_CATEGORY_URLS[article.category] }}{% else %}{{ article.category.url }}{% endif %}">{{ article.category }}</a>
+        {% endif %}
+
+        {% if page and page.category and page.category.slug != 'home' %}
+        <a href="{{ SITEURL }}/{% if page.category in CUSTOM_CATEGORY_URLS %}{{ CUSTOM_CATEGORY_URLS[page.category] }}{% else %}{{ page.category.url }}{% endif %}">{{ page.category }}</a>
+        {% endif %}
+
+        {#{% for title, link in MENUITEMS %}
+        <a href="{{ link }}">{{ title }}</a>
+        {% endfor %}#}
+
+        {#{% if FEED_ALL_ATOM %}
+        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">{{ _('Atom') }}</a>
+        {% endif %}
+
+        {% if FEED_ALL_RSS %}
+        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">{{ _('RSS') }}</a>
+        {% endif %}#}
+      </div>
+
+    </nav>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+      {% if CC_LICENSE %}
+        {% include "partial/cc_license.html" %}
+      {% else %}
+        {% include "partial/copyright.html" %}
+      {% endif %}
+    </footer>
+  </main>
+
+  {% if GOOGLE_ANALYTICS %}
+    {% include "partial/ga.html" %}
+  {% endif %}
+
+  {% if GUAGES %}
+    {% include "partial/guages.html" %}
+  {% endif %}
+
+  {% if ADD_THIS_ID %}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ ADD_THIS_ID }}" async="async"></script>
+  {% endif %}
+
+  {% if PIWIK_URL and PIWIK_SITE_ID %}
+    {% include "partial/piwik.html" %}
+  {% endif %}
+
+  {% include "partial/jsonld.html" %}
+
+  {% assets filters="rjsmin", output="js/packed.js", "js/glightbox.js" %}
+      <script src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
+  {% endassets %}
+  {% block additional_js %}{% endblock %}
+
+  {% if GITHUB_CORNER_URL %}
+  {% include 'partial/github.html' %}
+  {% endif %}
+  
+  <link href='https://fonts.googleapis.com/css?family=Spectral:200,300,400|Roboto:700,400,300,100' rel='stylesheet' type='text/css'>
+  <script src="https://z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=5089436f-ceee-47b1-bc15-16a613a0089d" defer></script>
+  <script src="https://use.fontawesome.com/da74083bfa.js" async></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+  <script>
+    (function() {
+      var cx = '012619199572818477397:hopsiikns1m';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+</body>
+</html>
