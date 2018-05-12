@@ -93,7 +93,6 @@ SITEMAP = {
 # THEME
 
 CUSTOM_CSS = 'css/custom.css'
-MENUITEMS = LINKS[1:]
 SOCIAL = (
     ('instagram', 'https://www.instagram.com/seanstoops/'),
     ('facebook', 'https://www.facebook.com/seanstoopsadventurevan/'),
@@ -119,6 +118,7 @@ LINKS = (
     ('Archives', '/archives.html'),
     ('Search', '/search/')
 )
+MENUITEMS = LINKS[1:]
 PAGE_URL = 'pages/{slug}/'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%b}/index.html'
