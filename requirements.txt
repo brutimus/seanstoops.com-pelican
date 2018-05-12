@@ -21,7 +21,6 @@ enum34==1.1.6
 Fabric==1.13.2
 feedgenerator==1.9
 -e git+https://github.com/jdittrich/figureAltCaption.git@master#egg=figureAltCaption
-figureAltCaption==0.0.0
 flake8==3.5.0
 funcsigs==1.0.2
 future==0.16.0
