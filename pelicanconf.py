@@ -99,7 +99,7 @@ SOCIAL = (
     ('github', 'https://github.com/brutimus'),
     ('reddit', 'https://www.reddit.com/user/brutimus/')
 )
-THEME = './themes/Flex'
+THEME = 'themes/Flex'
 
 
 # URLS
