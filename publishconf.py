@@ -30,9 +30,3 @@ GOOGLE_ADSENSE = {
         'article_bottom': '5682583438'
     }
 }
-
-print(os.path.dirname(os.path.abspath(__file__)))
-print(os.path.abspath(os.curdir))
-print(sys.path)
-print(os.listdir('.'))
-print(THEME)
