@@ -103,3 +103,4 @@ def exif():
                 fmt_path=local_path))
             local("exiftool -p {fmt_path}/captions.fmt . > captions.txt".format(
                 fmt_path=local_path))
+            local("touch blacklist.txt")

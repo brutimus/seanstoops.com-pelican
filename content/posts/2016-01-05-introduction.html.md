@@ -2,6 +2,7 @@ Title: Sprinter Van: Introduction
 Shorttitle: Introduction
 Slug: introduction
 Date: 2016-1-5
+Series: 2004 Sprinter Van
 Category: Van Building
 Tags: sprinter, build, build-log
 Authors: Sean Stoops

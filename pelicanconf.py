@@ -16,14 +16,17 @@ USE_FOLDER_AS_CATEGORY = False
 
 PATH = 'content'
 STATIC_PATHS = ['assets']
-
+CACHE_CONTENT = True
+LOAD_CONTENT_CACHE = True
 CUSTOM_CSS = 'css/custom.css'
-
+TYPOGRIFY = True
 INDEX_SAVE_AS = 'all_index.html'
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 PAGE_URL = 'pages/{slug}/'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
+YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%b}/index.html'
 
 TIMEZONE = 'America/Los_Angeles'
 
@@ -45,7 +48,7 @@ AUTHOR_FEED_RSS = None
 LINKS = (
     ('Home', '/'),
     ('Van Building', '/pages/camper-van-conversions/'),
-    ('Photos', '/pages/photo-galleries/'),
+    ('Photos', '/pages/photos/'),
     ('Archives', '/archives.html'),
     ('Search', '/search/')
 )
@@ -72,6 +75,7 @@ PLUGINS = (
     'pelican_alias',
     'photos',
     'related_posts',
+    # 'series',
     'sitemap'
 )
 
@@ -79,8 +83,9 @@ DISQUS_SITENAME = "seanstoops"
 
 TEMPLATE_PAGES = {
     'template_pages/camper-van-conversions.html': 'pages/camper-van-conversions/index.html',
-    'template_pages/photo-galleries.html': 'pages/photo-galleries/index.html',
-    'template_pages/search.html': 'search/index.html'
+    'template_pages/photos.html': 'pages/photos/index.html',
+    'template_pages/search.html': 'search/index.html',
+    'pages/google553619ee5f1c5922.html': 'google553619ee5f1c5922.html'
 }
 
 SITEMAP = {
@@ -112,4 +117,13 @@ PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Sean Stoops'
 CUSTOM_CATEGORY_URLS = {
     'van-building': 'pages/camper-van-conversions/',
     'photo-gallery': 'pages/photos/'
+}
+
+MARKDOWN = {
+    'extensions': [
+        'markdown.extensions.smarty',
+        'markdown.extensions.extra',
+        'markdown.extensions.meta',
+        'figureAltCaption'
+    ]
 }
