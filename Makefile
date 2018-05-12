@@ -18,6 +18,7 @@ SSH_USER=root
 SSH_TARGET_DIR=/var/www
 
 S3_BUCKET=www.seanstoops.com
+CF_DISTRIBUTION=E1D09SV64ANJOA
 
 CLOUDFILES_USERNAME=my_rackspace_username
 CLOUDFILES_API_KEY=my_rackspace_api_key
@@ -114,6 +115,7 @@ ftp_upload: publish
 s3_upload: publish
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve --exclude "*.jpg" --exclude "*.png" --exclude "*.js" --exclude "*.css" --exclude "*.woff" --exclude "*.woff2"
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve --add-header="Cache-Control:public, max-age=31536000" --exclude "*" --include "*.jpg" --include "*.png" --include "*.js" --include "*.css" --include "*.woff" --include "*.woff2"
+	aws cloudfront create-invalidation --distribution-id $(CF_DISTRIBUTION) --paths '/*'
 
 cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
