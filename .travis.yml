@@ -4,6 +4,7 @@ branches:
   only:
   - master
 install:
+  - npm install -g less
   - pip install --upgrade pip
   - pip install -r requirements.txt
 script:
