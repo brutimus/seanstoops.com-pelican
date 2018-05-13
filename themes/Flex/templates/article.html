@@ -43,7 +43,6 @@
     </script>
   {% endif %}
 
-  <div>
     {#{% if article.photo_image %}
     <img src="{{ SITEURL }}/{{ article.photo_image[1] }}" />
     {% endif %}#}
@@ -51,7 +50,6 @@
       {% include "partial/van-cta.html" %}
     {% endif %}
     {{ article.content }}
-  </div>
 
   {% if article.category|trim == "Photo Gallery" %}
     {% include "partial/photo-gallery.html" %}
