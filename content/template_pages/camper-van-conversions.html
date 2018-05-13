@@ -113,10 +113,10 @@
       {{ article.content }}
     {% endif %}
   </div>
+  {% if not loop.last %}
+    <hr />
+  {% endif %}
 </article>
-{% if not loop.last %}
-  <hr />
-{% endif %}
 {% endfor %}
 
 {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.index_bottom %}
