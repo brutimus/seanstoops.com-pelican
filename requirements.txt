@@ -59,7 +59,7 @@ pyRFC3339==1.0
 python-dateutil==2.6.1
 python-magic==0.4.13
 pytz==2017.2
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 rsa==3.4.2
 s3cmd==2.0.0
